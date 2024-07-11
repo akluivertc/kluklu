@@ -1,0 +1,384 @@
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: linear-gradient(45deg, #000, #FFD700, #000);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.header-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.error-message {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 18em;
+    margin-bottom: 10px;
+    animation: flip 2s infinite;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+#surpriseMessage {
+    font-size: 1.5em;
+    color: #FFD700;
+    background-color: #000;
+    font-weight: 700;
+    padding: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+    animation: slideInText 1s forwards;
+}
+
+#gameTitle {
+    animation: slideInText 1s forwards;
+}
+
+.logo {
+    width: 450px;
+    margin: 20px 0;
+}
+
+.back-link {
+    font-size: 1.2em;
+    color: #000;
+    text-decoration: none;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.back-link:hover {
+    background-color: #000;
+    color: #FFD700;
+}
+
+.animation-container {
+    position: relative;
+    width: 450px;
+    height: auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    opacity: 1;
+    z-index: 999;
+}
+
+.watermark img {
+    width: 100px;
+}
+
+.moving-image {
+    position: absolute;
+    top: 150px;
+    left: -200px;
+    animation: moveImage 20s linear infinite;
+}
+
+.separator-image {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: -35px 0 0 0; /* Moved up by 35px */
+    padding: 0;
+    position: relative;
+}
+
+.separator-image img {
+    width: 100%;
+    height: auto;
+}
+
+.page-two {
+    background: linear-gradient(to bottom, #fdf5d0, #fce49c);
+    padding: 50px;
+    text-align: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.page-two h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: 700;
+}
+
+#startButton {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#startButton:hover {
+    background-color: #000;
+    color: #FFD700;
+}
+
+#gameContainer {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border: 2px solid #000;
+}
+
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.bottom-image {
+    width: 100%;
+    height: auto;
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-image img {
+    width: 100%;
+    height: auto;
+}
+
+.potato-chips-images {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    background: #FFD700;
+}
+
+#chip1 {  
+    position: absolute;
+    top: 80px;
+    right: 60px;
+    width: 200px;
+}
+
+#chip2 {  
+    position: absolute;
+    top: 80px;
+    left: 140px;
+    width: 200px;
+}
+
+#chip3 {  
+    position: absolute;
+    top: 380px;
+    right: 200px;
+    width: 200px;
+}
+
+#chip4 {  
+    position: absolute;
+    top: 450px;
+    left: 10px;
+    width: 200px;
+}
+
+#chip5 {  
+    position: absolute;
+    top: 680px;
+    right: 10px;
+    width: 200px;
+}
+
+#chip6 {  
+    position: absolute;
+    top: 680px;
+    left: 200px;
+    width: 200px;
+}
+
+#chip7 {  
+    position: absolute;
+    top: 980px;
+    right: 250px;
+    width: 200px;
+}
+
+#chip8 {  
+    position: absolute;
+    top: 1100px;
+    left: 100px;
+    width: 200px;
+}
+
+.potato-chips-images img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+#basket {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+}
+
+@keyframes moveImage {
+    0% {
+        left: -200px;
+    }
+    100% {
+        left: calc(100% + 200px);
+    }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.moving-across {
+    position: absolute;
+    top: 200px;
+    right: -200px;
+    width: 200px;
+    animation: moveAcross 10s linear infinite;
+}
+
+@keyframes moveAcross {
+    0% {
+        right: -200px;
+    }
+    100% {
+        right: calc(100% + 200px);
+    }
+}
+
+@keyframes slideInText {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-text {
+    opacity: 0;
+    animation: slideInText 1s forwards;
+}
+
+#gameTitle {
+    animation-delay: 0.5s;
+}
+
+#surpriseMessage {
+    animation-delay: 1s;
+}
+
+.popup-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+    color: #FFD700;
+    padding: 20px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.5em;
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
